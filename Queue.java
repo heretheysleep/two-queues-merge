@@ -1,8 +1,8 @@
 public class Queue {
-    protected int length;
-    protected int[] elements;
-    protected int numberOfElements;
-    protected int nextElementIndex;
+    private int length;
+    private int[] elements;
+    private int numberOfElements;
+    private int nextElementIndex;
 
     public Queue(int length) {
         this.length = length;
