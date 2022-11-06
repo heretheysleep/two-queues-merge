@@ -51,8 +51,20 @@ public class Queue {
         Queue queue = secondQueue;
         int element = 0;
 
+        if (isFull()) {
+            System.out.println("\nOops! The main queue is full.");
+
+            return;
+        }
+
+        if (firstQueue.isEmpty() && secondQueue.isEmpty()) {
+            System.out.println("\nOops! The QMA didn't find any element in auxiliary queues.");
+
+            return;
+        }
+
         while (true) {
-            if (firstQueue.isEmpty() && secondQueue.isEmpty()) {
+            if (isFull() || (firstQueue.isEmpty() && secondQueue.isEmpty())) {
                 break;
             }
 
@@ -65,5 +77,7 @@ public class Queue {
             element = queue.removeElement();
             addElement(element);
         }
+
+        System.out.println("\nMerging the queues...\nSuccessful.");
     }
 }
