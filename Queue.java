@@ -46,4 +46,24 @@ public class Queue {
 
         return element;
     }
+
+    public void mergeQueues(Queue firstQueue, Queue secondQueue) {
+        Queue queue = secondQueue;
+        int element = 0;
+
+        while (true) {
+            if (firstQueue.isEmpty() && secondQueue.isEmpty()) {
+                break;
+            }
+
+            queue = !queue.equals(firstQueue) ? firstQueue : secondQueue;
+
+            if (queue.isEmpty()) {
+                queue = queue.equals(firstQueue) ? secondQueue : firstQueue;
+            }
+
+            element = queue.removeElement();
+            addElement(element);
+        }
+    }
 }
