@@ -34,7 +34,7 @@ public class QueueManager {
         int length = 0;
 
         if (numberOfQueue != 0) {
-            System.out.println("Queue " + numberOfQueue + ":");
+            System.out.println("Auxiliary queue" + numberOfQueue + ":");
         }
 
         while (true) {
@@ -82,7 +82,7 @@ public class QueueManager {
                     mainQueue.mergeQueues(firstAuxiliaryQueue, secondAuxiliaryQueue);
                     break;
                 case 4:
-                    printMainQueueElements();
+                    cleanMainQueueElements();
                     break;
                 case 5:
                     return option;
@@ -135,7 +135,7 @@ public class QueueManager {
         }
     }
 
-    private void printMainQueueElements() {
+    private void cleanMainQueueElements() {
         String output = "\n\nRESULT:\n\n";
 
         if (mainQueue.isEmpty()) {
